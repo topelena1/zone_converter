@@ -1,0 +1,31 @@
+<div class="container">
+  <h3>{{today | date:'EEEE LLLL hh:mm a z' }}</h3>
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Time Zone Convector</h2>
+      </div>
+    </div>
+</div>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+          <ul class="list-group">
+              <a        
+                class="list-group-item" 
+                style="cursor: pointer"
+                *ngFor="let timeItem of timeZoneList; let i = index"
+                (click)="onEditItem(timeItem, index)"
+                >      
+                {{timeItem.timeNow}} 
+              </a>
+          </ul>  
+        </div>
+    </div>
+</div>
+<div *ngIf="editMode">
+<app-edit-time [timeItem]="selectedItem" (timeChanged)="timeChanged($event)"></app-edit-time>
+</div>
+<app-create-time-zone (newZoneCreated)="newZoneCreated($event)"></app-create-time-zone>
+
+    

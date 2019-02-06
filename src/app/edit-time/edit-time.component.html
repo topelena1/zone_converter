@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">      
+      <form 
+        [formGroup]="form"
+        (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <div class="col-md-8 form-group">           
+            <input 
+              type="string" 
+              id="projectName" 
+              class="form-control"
+              formControlName="newTime"
+              name="projectName"                      
+            >  
+          </div>
+          <div class="col-md-2 form-group">
+             <button class="btn btn-success" 
+              type="submit">Edit</button>
+          </div>   
+        </div>
+       </form>
+    </div>
+  </div>
+</div>
+  
+  
+
